@@ -4,6 +4,12 @@ const ef = require('ffmpeg-extract-frames');
 const block = "██";
 const blank = "  ";
 
+/**
+ * @author Göksel KÜÇÜKŞAHİN
+ * @Date 10/04/2021
+ * @param {jimp}image file for convertion
+ * @return {Promise<String>} single frame/page of video converted to ASCII
+ */
 const convertFrame = async (image) => {
   // I'll return a result, I Promise!
   return new Promise((res, rej) => {
@@ -31,6 +37,12 @@ const convertFrame = async (image) => {
   });
 }
 
+/**
+ * @author Göksel KÜÇÜKŞAHİN
+ * @Date 10/04/2021
+ * @param {Array<String>}paths array of image paths
+ * @return {Promise<Array<String>>} page Array ready for printing.
+ */
 const collectFrame = async (paths) => {
   const pages = []
   for (let i = 0; i < paths.length; i++) {
@@ -42,6 +54,11 @@ const collectFrame = async (paths) => {
   return pages;
 }
 
+/**
+ * @author Göksel KÜÇÜKŞAHİN
+ * @Date 10/04/2021
+ * @return {Promise<void>}
+ */
 const badapple = async () => {
   const paths = [];
   for (let i = 1; i < 2192; i++) { // 2192
@@ -49,11 +66,17 @@ const badapple = async () => {
   }
   const pages = await collectFrame(paths);
   const file = fs.createWriteStream('result.txt');
-  file.on('error', (err) => { /* error handling */ });
+  file.on('error', (err) => { /* error handling */
+  });
   pages.forEach(page => file.write(page));
   file.end();
 }
 
+/**
+ * Main Method.
+ * @author Göksel KÜÇÜKŞAHİN
+ * @Date 10/04/2021
+ */
 (async () => {
   try {
     await badapple();
