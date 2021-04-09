@@ -5,7 +5,7 @@ const block = "██";
 const blank = "  ";
 
 const convertFrame = async (image) => {
-  // I return a result. I Promise
+  // I'll return a result, I Promise!
   return new Promise((res, rej) => {
     let row = "";
     try {
