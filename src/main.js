@@ -49,9 +49,8 @@ const badapple = async () => {
   }
   const pages = await collectFrame(paths);
   const file = fs.createWriteStream('result.txt');
-  file.on('error', (err) => { /* error handling */
-  });
-  pages.forEach(v => file.write(v));
+  file.on('error', (err) => { /* error handling */ });
+  pages.forEach(page => file.write(page));
   file.end();
 }
 
