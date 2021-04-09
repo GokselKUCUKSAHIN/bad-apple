@@ -34,7 +34,9 @@ const convertFrame = async (image) => {
 const collectFrame = async (paths) => {
   const pages = []
   for (let i = 0; i < paths.length; i++) {
-    const page = await convertFrame(await jimp.read(paths[i]));
+    const path = paths[i];
+    const image = await jimp.read(path);
+    const page = await convertFrame(image);
     pages.push(page + "~");
   }
   return pages;
