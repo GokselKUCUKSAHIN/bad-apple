@@ -1,0 +1,31 @@
+{
+  "name": "bad-apple",
+  "version": "1.0.0",
+  "description": "ascii art",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GokselKUCUKSAHIN/bad-apple.git"
+  },
+  "keywords": [
+    "bad",
+    "apple",
+    "ascii",
+    "art",
+    "animation"
+  ],
+  "author": "Göksel KÜÇÜKŞAHİN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GokselKUCUKSAHIN/bad-apple/issues"
+  },
+  "homepage": "https://github.com/GokselKUCUKSAHIN/bad-apple#readme",
+  "dependencies": {
+    "ffmpeg-extract-frames": "^2.0.2",
+    "hide-terminal-cursor": "^0.0.1",
+    "jimp": "^0.16.1"
+  }
+}
