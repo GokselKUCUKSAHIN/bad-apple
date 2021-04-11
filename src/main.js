@@ -61,7 +61,7 @@ const collectFrame = async (paths) => {
  */
 const badapple = async () => {
   const paths = [];
-  for (let i = 1; i < 2192; i++) { // 2192
+  for (let i = 1; i < 200; i++) { // 2192
     paths.push(`../frames/frame-${i}.png`);
   }
   const pages = await collectFrame(paths);
