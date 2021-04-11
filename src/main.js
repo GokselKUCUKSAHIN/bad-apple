@@ -1,4 +1,4 @@
-const fs = require('fs');
+const writeFile = require('./IO').writeFile;
 const jimp = require('jimp');
 const ef = require('ffmpeg-extract-frames');
 const block = "██";
@@ -65,12 +65,10 @@ const badapple = async () => {
     paths.push(`../frames/frame-${i}.png`);
   }
   const pages = await collectFrame(paths);
-  const file = fs.createWriteStream('result.txt');
-  file.on('error', (err) => { /* error handling */
-  });
-  pages.forEach(page => file.write(page));
-  file.end();
+
+  writeFile('pages.txt', pages);
 }
+
 
 /**
  * Main Method.
@@ -78,9 +76,10 @@ const badapple = async () => {
  * @Date 10/04/2021
  */
 (async () => {
+  /*
   try {
     await badapple();
   } catch (exception) {
     console.log(exception);
-  }
+  }*/
 })();
