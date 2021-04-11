@@ -7,13 +7,12 @@ const uncompress = require('./compress').uncompress;
   // const file = readFile("low.txt").split('~');
   const compressed = readFile("compressedAll.txt");
   const file = uncompress(compressed).split('~');
-
   let index = 0;
-  let si = setInterval(() => {
+  let iterator = setInterval(() => {
     console.clear();
     if (index >= file.length) {
-      clearInterval(si);
+      clearInterval(iterator);
     }
     console.log(file[index++]);
-  }, 100);
+  }, 80);
 })();
