@@ -1,12 +1,12 @@
-const io = require('./IO');
-const util = require('util');
+// const io = require('./IO');
+// const util = require('util');
 
 const compress = (array) => {
   const compressed = [];
   array.forEach(row => {
     compressed.push(compressLine(row));
   });
-  return compressed.join('&');
+  return compressed.join('\n');
 }
 
 const compressLine = (line) => {
@@ -26,7 +26,7 @@ const compressLine = (line) => {
 
 const uncompress = (compressedFile) => {
   let uncompressedString = '';
-  let uncompressedSplit = compressedFile.split('&').filter(x => x);
+  const uncompressedSplit = compressedFile.split('\n').filter(x => x);
   uncompressedSplit.forEach(row => {
     row.split(';').filter(x => x).forEach(item => {
       const [chr, count] = item.split(',');
@@ -36,15 +36,25 @@ const uncompress = (compressedFile) => {
     uncompressedString += '\n';
   });
   // console.log(uncompressedFile);
-  return uncompressedString;
+  return uncompressedString.slice(0, -1);
 }
 
-const equals = (a, b) => a.valueOf().normalize() === b.valueOf().normalize();
+// const equals = (a, b) => a.valueOf().normalize() === b.valueOf().normalize();
 
-/* (async () => {
-  // const file = io.readFile('../text/min.txt')
+/*
+(async () => {
+
+  console.log("hello_")
+  const file = io.readFile('./low.txt');
+  const compressedFile = io.readFile('./compressedAll.txt');
+  const uncompressedFile = uncompress(compressedFile);
+  // io.writeFile('./decompressedFile.txt', uncompressedFile);
+  // console.log(uncompressedFile);
+  console.log(equals(file, uncompressedFile));
+
   // const lines = file.split('\n');
   // const joined = compress(lines);
+  // io.writeFile("compressedAll.txt",joined);
   // const uncompressed = uncompress(joined);
   // console.log(equals(file, uncompressed))
 
@@ -55,7 +65,9 @@ const equals = (a, b) => a.valueOf().normalize() === b.valueOf().normalize();
   // const compressed = io.readFile('./compressed3.txt');
   // console.log(uncompress(compressed));
   // io.writeFile("uncompresed.txt", uncompress(compressed));
+
 })();
 */
 
+module.exports.compress = compress;
 module.exports.uncompress = uncompress;

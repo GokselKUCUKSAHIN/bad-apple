@@ -26,9 +26,10 @@ const writeFile = (path, pages) => {
   const file = fs.createWriteStream(path);
   file.on('error', (err) => { /* error handling */
   });
-  if(!Array.isArray(pages))
-    pages = pages.split('\n').filter(x => x);
-  pages.forEach(page => file.write(page));
+  if (Array.isArray(pages))
+    pages.forEach(page => file.write(page));
+  else
+    file.write(pages);
   file.end();
 }
 
