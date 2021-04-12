@@ -4,7 +4,8 @@
 const compress = (array) => {
   const compressed = [];
   array.forEach(row => {
-    compressed.push(compressLine(row));
+    const line = compressLine(row);
+    compressed.push(line);
   });
   return compressed.join('\n');
 }
@@ -16,7 +17,9 @@ const compressLine = (line) => {
     if (char === lastChar) {
       count++;
     } else {
-      result.push(`${lastChar},${count}`)
+      const row = `${lastChar},${count}`;
+      // if (row.normalize() !== '\n,1')
+      result.push(row);
       lastChar = char;
       count = 1;
     }

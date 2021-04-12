@@ -5,7 +5,7 @@ const uncompress = require('./compress').uncompress;
 (() => {
   hideCursor();
   // const file = readFile("low.txt").split('~');
-  const compressed = readFile("compressedAll.txt");
+  const compressed = readFile("new_compress.txt");
   const file = uncompress(compressed).split('~');
   let index = 0;
   let iterator = setInterval(() => {
