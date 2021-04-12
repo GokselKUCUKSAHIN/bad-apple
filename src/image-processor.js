@@ -1,5 +1,5 @@
 const hideCursor = require('hide-terminal-cursor');
-const readFile = require('./IO').readFile;
+const readFile = require('./io').readFile;
 const uncompress = require('./compress').uncompress;
 
 (() => {

@@ -1,4 +1,4 @@
-const writeFile = require('./IO').writeFile;
+const writeFile = require('./io').writeFile;
 const jimp = require('jimp');
 const ef = require('ffmpeg-extract-frames');
 const block = "██";

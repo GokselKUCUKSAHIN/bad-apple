@@ -1,4 +1,4 @@
-// const io = require('./IO');
+// const io = require('./io');
 // const util = require('util');
 
 const compress = (array) => {
