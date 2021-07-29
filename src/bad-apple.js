@@ -21,7 +21,7 @@ const convertFrame = async (image) => {
       image
         .rgba(false)
         .resize(100, 100)
-        .quality(60)
+        .quality(60) // jpeg
         .grayscale()
         .contrast(1)
         .posterize(2);
@@ -75,3 +75,5 @@ const badapple = async () => {
   const compressed = compress.compress(joined);
   io.writeFile('new_compress.txt', compressed);
 }
+
+module.exports = badapple;

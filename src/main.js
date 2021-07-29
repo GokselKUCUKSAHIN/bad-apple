@@ -1,3 +1,4 @@
+const badapple = require('./bad-apple');
 /**
  * Main Method.
  * @author Göksel KÜÇÜKŞAHİN
