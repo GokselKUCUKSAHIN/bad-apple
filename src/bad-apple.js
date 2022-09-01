@@ -2,7 +2,6 @@ const io = require('./io');
 const jimp = require('jimp');
 const compress = require('./compress');
 
-
 const block = "██";
 const blank = "  ";
 
@@ -75,5 +74,4 @@ const badapple = async () => {
   const compressed = compress.compress(joined);
   io.writeFile('new_compress.txt', compressed);
 }
-
 module.exports = badapple;
