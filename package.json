@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@ffmpeg/core": "^0.11.0",
+    "@ffmpeg/ffmpeg": "^0.11.4",
+    "hide-terminal-cursor": "^0.0.1",
+    "jimp": "^0.16.1",
+    "nanoid": "^3.3.4",
+    "node-gzip": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "@types/node-gzip": "^1.1.0",
+    "ts-node": "^10.9.1"
+  }
+}
