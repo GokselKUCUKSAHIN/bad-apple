@@ -1,15 +1,25 @@
 {
+  "scripts": {
+    "start": "node js/main.js",
+    "build": "date +\"%T\" && echo \"Cleaning...\" && rm -rf ./js && echo \"Compiling...\" && tsc && echo \"Done!\" && date +\"%T\" && echo ~~~~~~~~~~~~~~~~\n",
+    "build-with-types": "tsc --declaration",
+    "bundle": "npm run build && browserify --node --ignore-missing js/player.js | terser > compiled/player.js",
+    "compile": "npm run build && npm run start",
+    "run-main-ts-node": "ts-node ./ts/project/bishamon/index.ts"
+  },
   "dependencies": {
     "@ffmpeg/core": "^0.11.0",
     "@ffmpeg/ffmpeg": "^0.11.4",
     "hide-terminal-cursor": "^0.0.1",
     "jimp": "^0.16.1",
     "nanoid": "^3.3.4",
-    "node-gzip": "^1.1.2"
+    "node-gzip": "^1.1.2",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "@types/node": "^18.7.14",
     "@types/node-gzip": "^1.1.0",
+    "terser": "^5.15.0",
     "ts-node": "^10.9.1"
   }
 }
