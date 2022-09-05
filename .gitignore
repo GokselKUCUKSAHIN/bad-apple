@@ -109,5 +109,5 @@ dist
 
 frames/
 *.txt
-
+js/
 package-lock.json
