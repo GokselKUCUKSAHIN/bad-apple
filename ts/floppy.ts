@@ -22,5 +22,5 @@ const floppyArray = [
     "              └───┴─────────────────┴───┘"];
 
 export function printFloppy() {
-    floppyArray.forEach(row => console.log(row));
+    console.log(floppyArray.join('\n'));
 }
